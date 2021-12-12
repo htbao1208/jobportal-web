@@ -20,4 +20,20 @@ public class HomeController {
     public String index(){
         return "index";
     }
+    @RequestMapping("/seeker-register")
+    public String skregister(){
+        return "seekerRegister";
+    }
+    @RequestMapping("/seeker-login")
+    public String sklogin(){
+        return "seekerLogin";
+    }
+    @RequestMapping("/joblist")
+    public String joblist(){
+        return "jobList";
+    }
+    @RequestMapping("/job/jobdetail")
+    public String jobdetail(){
+        return "jobDetail";
+    }
 }

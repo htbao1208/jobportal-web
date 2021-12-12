@@ -1,36 +1,42 @@
-<nav class="navbar navbar-expand-md navbar-dark">
-    <div class="container">
-        <a href="#" class="navbar-brand">Bootdey.com</a>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
-            <span class="menu-icon-bar"></span>
-            <span class="menu-icon-bar"></span>
-            <span class="menu-icon-bar"></span>
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-branch" href="#">
+            <img src="<c:url value="/images/logo.png"/>" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div id="main-nav" class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li><a href="#" class="nav-item nav-link active">Home</a></li>
-                <li><a href="#" class="nav-item nav-link">About Us</a></li>
-                <li class="dropdown">
-                    <a href="#" class="nav-item nav-link" data-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Dropdown Item 1</a>
-                        <a href="#" class="dropdown-item">Dropdown Item 2</a>
-                        <a href="#" class="dropdown-item">Dropdown Item 3</a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="<c:url value="/"/>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/joblist"/>">Find Job</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Company</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle font-weight-bolder mx-1" data-toggle="dropdown">
+                        <img class="mr-1 rounded-circle" src="<c:url value="/images/Natasha.png"/>"  width="25" height="25" alt="avatar">
+                        <span>Đăng ký</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-center">                                                      
+                        <a class="dropdown-item" href="<c:url value="/seeker-register"/>">Đăng ký</a>
+                        <a class="dropdown-item"  href="<c:url value="/seeker-login"/>">Đăng nhập</a>                         
                     </div>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="nav-item nav-link" data-toggle="dropdown">Portfolio</a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Dropdown Item 1</a>
-                        <a href="#" class="dropdown-item">Dropdown Item 2</a>
-                        <a href="#" class="dropdown-item">Dropdown Item 3</a>
-                        <a href="#" class="dropdown-item">Dropdown Item 4</a>
-                        <a href="#" class="dropdown-item">Dropdown Item 5</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Connect</a>
                 </li>
-                <li><a href="#" class="nav-item nav-link">Contact</a></li>
             </ul>
         </div>
     </div>

@@ -11,7 +11,7 @@ and open the template in the editor.
     
 <tiles-definitions>
     <!--HOME-->
-    <definition name="baseLayout" template="/WEB-INF/layout/base.jsp">
+    <definition name="seekerLayout" template="/WEB-INF/layout/base.jsp">
         <put-attribute name="title" value="...."/>
         <put-attribute name="css" value=""/>
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
@@ -20,9 +20,30 @@ and open the template in the editor.
         <put-attribute name="script" value=""/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
     </definition>
-    <definition name="index" extends="baseLayout">
-        <put-attribute name="title" value="Trang chu" />        
+    <definition name="index" extends="seekerLayout">
+        <put-attribute name="title" value="Trang chu" />   
+        <put-attribute name="css" value="/jobportal/css/home.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp" />       
+    </definition>
+                                                                <!--{SEEKER}-->
+    <definition name="seekerRegister" extends="seekerLayout">
+        <put-attribute name="title" value="Đăng ký" />   
+        <put-attribute name="css" value="/jobportal/css/seeker-register.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/register.jsp" />       
+    </definition>
+    <definition name="seekerLogin" extends="seekerLayout">
+        <put-attribute name="title" value="Đăng nhập" />   
+        <put-attribute name="css" value="/jobportal/css/seeker-register.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/login.jsp" />       
+    </definition>
+    <definition name="jobList" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách" />   
+        <put-attribute name="css" value="/jobportal/css/joblist.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/joblist.jsp" />       
+    </definition><definition name="jobDetail" extends="seekerLayout">
+        <put-attribute name="title" value="Chi tiết" />   
+        <put-attribute name="css" value="/jobportal/css/jobdetail.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/jobdetail.jsp" />       
     </definition>
 </tiles-definitions>
 
