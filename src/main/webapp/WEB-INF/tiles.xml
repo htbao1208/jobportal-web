@@ -10,7 +10,7 @@ and open the template in the editor.
     "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
     
 <tiles-definitions>
-    <!--HOME-->
+    <!--SEEKER-HOME-->
     <definition name="seekerLayout" template="/WEB-INF/layout/base.jsp">
         <put-attribute name="title" value="...."/>
         <put-attribute name="css" value=""/>
@@ -44,6 +44,18 @@ and open the template in the editor.
         <put-attribute name="title" value="Chi tiết" />   
         <put-attribute name="css" value="/jobportal/css/jobdetail.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/seeker/jobdetail.jsp" />       
+    </definition>
+    
+    
+    <!--COMPANY-HOME-->
+    <definition name="compLayout" template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="...."/>
+        <put-attribute name="css" value=""/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+        <put-attribute name="subheader" value="" />
+        <put-attribute name="content" value=""/>
+        <put-attribute name="script" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
     </definition>
 </tiles-definitions>
 

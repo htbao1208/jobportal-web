@@ -5,9 +5,15 @@
  */
 package com.jp.controllers;
 
+
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
 
 /**
  *
@@ -15,19 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @ControllerAdvice
-public class HomeController {
+public class HomeController {    
     @RequestMapping("/")
-    public String index(){
+    public String index(Model model){        
         return "index";
     }
-    @RequestMapping("/seeker-register")
-    public String skregister(){
-        return "seekerRegister";
-    }
-    @RequestMapping("/seeker-login")
-    public String sklogin(){
-        return "seekerLogin";
-    }
+    
     @RequestMapping("/joblist")
     public String joblist(){
         return "jobList";
@@ -36,4 +35,6 @@ public class HomeController {
     public String jobdetail(){
         return "jobDetail";
     }
+    
+
 }

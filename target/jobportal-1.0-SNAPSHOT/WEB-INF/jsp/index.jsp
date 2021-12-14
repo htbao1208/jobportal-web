@@ -3,7 +3,10 @@
     Created on : Dec 11, 2021, 3:03:47 PM
     Author     : kid03
 --%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 
 <div id="slides" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
@@ -35,11 +38,11 @@
         </div>
     </div>
 </div>
-<!-- jumbotron -->
+
 <div class="container-fluid">
     <div class="jumbotron">
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-            <p>This is an example of using Bootstrap to make a responsive Website. This is a tutorial</p>
+            <p>This is an example of using Bootstrap to make a responsive Website. This is a tutorial</p>             
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
             <a href="#">

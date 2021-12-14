@@ -3,15 +3,16 @@
     Created on : Dec 11, 2021, 8:13:24 PM
     Author     : kid03
 --%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+
 
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link type="text/css" rel="stylesheet" href="<c:url value="/css/style.css"/>"/>
