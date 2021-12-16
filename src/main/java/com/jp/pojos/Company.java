@@ -17,6 +17,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -34,6 +36,10 @@ public class Company implements Serializable{
     private String logo;
     private String phone;
     private String address;
+    
+    //
+    @Transient
+    private MultipartFile file;
     
     //relationship
     @OneToOne(cascade = CascadeType.ALL)
@@ -184,5 +190,19 @@ public class Company implements Serializable{
      */
     public void setRecruits(Set<Recruit> recruits) {
         this.recruits = recruits;
+    }
+
+    /**
+     * @return the file
+     */
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 }

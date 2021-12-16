@@ -1,11 +1,10 @@
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <nav class="navbar navbar-expand-md navbar-light sticky-top">
     <div class="container-fluid">
         <a class="navbar-branch" href="#">
-            <img src="<c:url value="/images/black_icon.png"/>" height="30">
+            <img src="<c:url value="/images/white-icon.png"/>" height="30">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" 
                 data-target="#navbarResponsive">
@@ -14,14 +13,15 @@
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                
                 <li class="nav-item">
-                    <a class="nav-link active" href="<c:url value="/"/>">Home</a>
+                    <a class="nav-link active" href="<c:url value="/company"/>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/joblist"/>">Find Job</a>
+                    <a class="nav-link" href="<c:url value="#"/>">Find Seeker</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Company</a>
+                    <a class="nav-link" href="#">XXX</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -55,7 +55,7 @@
                     </li>
                 </c:if>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/company"/>">For Company</a>
+                    <a class="nav-link" href="<c:url value="/"/>">For Seeker</a>
                 </li>
             </ul>
         </div>

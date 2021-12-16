@@ -13,6 +13,7 @@ and open the template in the editor.
     <!--SEEKER-HOME-->
     <definition name="seekerLayout" template="/WEB-INF/layout/base.jsp">
         <put-attribute name="title" value="...."/>
+        <put-attribute name="cssmain" value="/jobportal/css/style.css"/>
         <put-attribute name="css" value=""/>
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
         <put-attribute name="subheader" value="" />
@@ -50,12 +51,18 @@ and open the template in the editor.
     <!--COMPANY-HOME-->
     <definition name="compLayout" template="/WEB-INF/layout/base.jsp">
         <put-attribute name="title" value="...."/>
+        <put-attribute name="cssmain" value="/jobportal/css/style-comp.css"/>
         <put-attribute name="css" value=""/>
-        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+        <put-attribute name="header" value="/WEB-INF/layout/header-comp.jsp" />
         <put-attribute name="subheader" value="" />
         <put-attribute name="content" value=""/>
         <put-attribute name="script" value=""/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    </definition>
+    <definition name="index-comp" extends="compLayout">
+        <put-attribute name="title" value="Trang chu" />   
+        <put-attribute name="css" value="/jobportal/css/test.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/profile.jsp" />       
     </definition>
 </tiles-definitions>
 

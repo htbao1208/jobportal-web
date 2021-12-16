@@ -15,7 +15,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link type="text/css" rel="stylesheet" href="<c:url value="/css/style.css"/>"/>
+    
+    <link type="text/css" rel="stylesheet" href="<tiles:getAsString name="cssmain"/>"/>
     <link type="text/css" rel="stylesheet" href="<tiles:getAsString name="css"/>"/>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />

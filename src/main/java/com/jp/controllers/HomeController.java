@@ -7,9 +7,11 @@ package com.jp.controllers;
 
 
 
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -35,6 +37,9 @@ public class HomeController {
     public String jobdetail(){
         return "jobDetail";
     }
-    
+    @ModelAttribute
+    public void commonAttrs(Model model, HttpSession session) {        
+        model.addAttribute("currentUser", session.getAttribute("currentUser"));
+    }
 
 }

@@ -29,12 +29,36 @@
         </div>
         <div class="carousel-item">
             <img src="<c:url value="/images/carousel1.png"/>">
+            <div class="carousel-caption">
+                <h1 class="display-2">Example</h1>
+                <h3>Autolayout with Boostrap</h3>
+                <button type="button" class="btn btn-outline-light btn-lg">
+                    Join with US
+                </button>
+                
+            </div>
         </div>
         <div class="carousel-item">
             <img src="<c:url value="/images/carousel2.png"/>">
+            <div class="carousel-caption">
+                <h1 class="display-2">Example</h1>
+                <h3>Autolayout with Boostrap</h3>
+                <button type="button" class="btn btn-outline-light btn-lg">
+                    Join with US
+                </button>
+                
+            </div>
         </div>
         <div class="carousel-item">
             <img src="<c:url value="/images/carousel3.png"/>">
+            <div class="carousel-caption">
+                <h1 class="display-2">Example</h1>
+                <h3>Autolayout with Boostrap</h3>
+                <button type="button" class="btn btn-outline-light btn-lg">
+                    Join with US
+                </button>
+                
+            </div>
         </div>
     </div>
 </div>
