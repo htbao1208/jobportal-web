@@ -5,16 +5,16 @@
  */
 package com.jp.service;
 
-import com.jp.pojos.Company;
+import com.jp.pojos.Job;
 import java.util.List;
 
 /**
  *
  * @author kid03
  */
-public interface CompanyService {
-    boolean addOrUpdate(Company company);
-    Company getCompanyById(int id);
-    List<Company> getCompanys(String kw, int page); 
-    List<Company> getCompByUserId(int id);
+public interface JobService {
+    boolean addJob(Job job);
+    List<Job> listJobs(String kw, int page);
+    long countPost();
+    Job getJobById(int i);
 }

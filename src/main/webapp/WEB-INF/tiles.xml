@@ -64,5 +64,10 @@ and open the template in the editor.
         <put-attribute name="css" value="/jobportal/css/test.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/comp/profile.jsp" />       
     </definition>
+    <definition name="testPost" extends="compLayout">
+        <put-attribute name="title" value="Trang chu" />   
+        <put-attribute name="css" value="/jobportal/css/test.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/post.jsp" />       
+    </definition>
 </tiles-definitions>
 

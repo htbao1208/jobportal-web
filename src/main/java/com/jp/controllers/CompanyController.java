@@ -27,8 +27,13 @@ public class CompanyController {
     private CompanyService companyService;
 
     @GetMapping("/company")
-    public String index(Model model) {
-        model.addAttribute("company", new Company());
+    public String index(Model model, HttpSession session) {
+        User user = (User) session.getAttribute("currentUser");
+        System.out.println(this.companyService.getCompByUserId(user.getId()));
+        if(this.companyService.getCompByUserId(user.getId()).isEmpty())            
+            model.addAttribute("company", new Company());
+        else    
+            model.addAttribute("company", this.companyService.getCompByUserId(user.getId()).get(0));        
         return "index-comp";
     }
 
@@ -49,4 +54,8 @@ public class CompanyController {
         return "index-comp";
 
     }
+//    @GetMapping("/show")
+//    public String show (Model model, HttpSession session){
+//        
+//    }
 }

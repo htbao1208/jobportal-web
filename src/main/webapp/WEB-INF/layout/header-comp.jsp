@@ -21,7 +21,7 @@
                     <a class="nav-link" href="<c:url value="#"/>">Find Seeker</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">XXX</a>
+                    <a class="nav-link" href="<c:url value="/company/post"/>">XXX</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>

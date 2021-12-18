@@ -5,16 +5,16 @@
  */
 package com.jp.repository;
 
-import com.jp.pojos.Company;
+import com.jp.pojos.Job;
 import java.util.List;
 
 /**
  *
  * @author kid03
  */
-public interface CompanyRepository {
-    boolean addOrUpdate(Company comp);
-    List<Company> getCompanys(String kw, int page);
-    Company getCompanyById(int id);
-    List<Company> getCompByUserId(int id);
+public interface JobRepository {
+    boolean addJob(Job job);
+    List<Job> listJobs(String kw, int page);
+    long countPost();
+    Job getJobById(int id);
 }

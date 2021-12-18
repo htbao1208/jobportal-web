@@ -6,7 +6,8 @@
 package com.jp.repository.impl;
 
 import com.jp.pojos.Company;
-import com.jp.repository.CompanyRepository;
+import com.jp.pojos.Job;
+import com.jp.repository.JobRepository;
 import java.util.List;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -25,39 +26,39 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-public class CompanyRepositoryImpl implements CompanyRepository{
+public class JobRepositoryImpl implements JobRepository{
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
-    
+
     @Override
-    public boolean addOrUpdate(Company comp) {
+    public boolean addJob(Job job) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         try {
-            session.save(comp);            
+            session.save(job);            
             return true;
         } catch (Exception ex) {
-            System.err.println("--- add or update comp error ---" + ex.getMessage());
-            ex.printStackTrace();
+            System.err.println("--- add or update job error ---" + ex.getMessage());
+            
         }
         
         return false;
     }
 
     @Override
-    public List<Company> getCompanys(String kw, int page) {
+    public List<Job> listJobs(String kw, int page) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Company> query = builder.createQuery(Company.class);
-        Root root = query.from(Company.class);
+        CriteriaQuery<Job> query = builder.createQuery(Job.class);
+        Root root = query.from(Job.class);
         query = query.select(root);
         
         if (kw != null) {
-            Predicate p = builder.like(root.get("compName").as(String.class), 
+            Predicate p = builder.like(root.get("title").as(String.class), 
                     String.format("%%%s%%", kw));
             query = query.where(p);
         }
         
-        query = query.orderBy(builder.desc(root.get("id")));
+        query = query.orderBy(builder.desc(root.get("createdDate")));
         
         Query q = session.createQuery(query);
         
@@ -69,28 +70,19 @@ public class CompanyRepositoryImpl implements CompanyRepository{
     }
 
     @Override
-    public Company getCompanyById(int id) {
+    public long countPost() {
         Session session = this.sessionFactory.getObject().getCurrentSession();
-        return session.get(Company.class, id);
+        Query q = session.createQuery("Select Count(*) From Job");
+        
+        return Long.parseLong(q.getSingleResult().toString());
     }
 
     @Override
-    public List<Company> getCompByUserId(int id) {
+    public Job getJobById(int i) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Company> query = builder.createQuery(Company.class);
-        Root root = query.from(Company.class);
-        query = query.select(root);
-        
-        Predicate p = builder.equal(root.get("user"), id);
-        query = query.where(p);
-        
-        
-        
-        
-        Query q = session.createQuery(query);
-        
-        return q.getResultList();
+        Job j;
+        j = session.get(Job.class, i);
+        return j;
     }
     
 }

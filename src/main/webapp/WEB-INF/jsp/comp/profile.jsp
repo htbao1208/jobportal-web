@@ -41,6 +41,7 @@
             <%--<form:input type="file" id="file" path="file" class="form-control form-control-lg" />--%>
             <!--<label class="form-label" for="file">Logo</label>-->
         <!--</div>-->
+        <%--<form:hidden path="id" />--%>
 
 
         <div class="d-flex justify-content-center">

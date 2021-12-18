@@ -33,7 +33,7 @@ public class Job implements Serializable{
     @Temporal(javax.persistence.TemporalType.DATE)
     @Column(name = "created_date")
     private Date createdDate;
-    @Column(name = "desc")
+    
     private String description;
     @Column(name = "job_type")
     private String jobType;
