@@ -24,7 +24,7 @@ import javax.persistence.Temporal;
  * @author kid03
  */
 @Entity
-@Table(name = "jobs")
+@Table(name = "job")
 public class Job implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +47,9 @@ public class Job implements Serializable{
     private Company company;
     @OneToMany(mappedBy = "job")
     private Set<Application> applications;
+    @ManyToOne
+    @JoinColumn(name = "id_career")
+    private Career career;
 
     /**
      * @return the id
@@ -186,5 +189,19 @@ public class Job implements Serializable{
      */
     public void setApplications(Set<Application> applications) {
         this.applications = applications;
+    }
+
+    /**
+     * @return the career
+     */
+    public Career getCareer() {
+        return career;
+    }
+
+    /**
+     * @param career the career to set
+     */
+    public void setCareer(Career career) {
+        this.career = career;
     }
 }

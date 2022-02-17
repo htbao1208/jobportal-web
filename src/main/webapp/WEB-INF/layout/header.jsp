@@ -34,7 +34,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-center">                                                      
                             <a class="dropdown-item" href="<c:url value="/seeker-register"/>">Đăng ký</a>
-                            <a class="dropdown-item"  href="<c:url value="/seeker-login"/>">Đăng nhập</a>                         
+                            <a class="dropdown-item"  href="<c:url value="/login"/>">Đăng nhập</a>                         
                         </div>
                     </li>
                 </c:if>
@@ -50,7 +50,8 @@
                             <span>${currentUser.username}</span>                            
                         </a>
                         <div class="dropdown-menu dropdown-menu-center">                                                      
-                            <a class="dropdown-item" href="<c:url value="/logout"/>">Đăng xuất</a>                                                   
+                            <a class="dropdown-item" href="<c:url value="/seeker/main"/>">Profile</a>
+                            <a class="dropdown-item" href="<c:url value="/logout"/>">Đăng xuất</a>
                         </div>
                     </li>
                 </c:if>

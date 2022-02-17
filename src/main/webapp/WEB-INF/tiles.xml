@@ -26,7 +26,9 @@ and open the template in the editor.
         <put-attribute name="css" value="/jobportal/css/home.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp" />       
     </definition>
+    
                                                                 <!--{SEEKER}-->
+                                                                
     <definition name="seekerRegister" extends="seekerLayout">
         <put-attribute name="title" value="Đăng ký" />   
         <put-attribute name="css" value="/jobportal/css/seeker-register.css"/>     
@@ -41,14 +43,60 @@ and open the template in the editor.
         <put-attribute name="title" value="Danh sách" />   
         <put-attribute name="css" value="/jobportal/css/joblist.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/seeker/joblist.jsp" />       
-    </definition><definition name="jobDetail" extends="seekerLayout">
+    </definition>
+    <definition name="jobDetail" extends="seekerLayout">
         <put-attribute name="title" value="Chi tiết" />   
         <put-attribute name="css" value="/jobportal/css/jobdetail.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/seeker/jobdetail.jsp" />       
     </definition>
+    <definition name="seekerProfile" extends="seekerLayout">
+        <put-attribute name="title" value="Thông tin" />   
+        <put-attribute name="css" value=""/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/editProfile.jsp" />       
+    </definition>
+    <definition name="seekerList" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách ứng viên" />   
+        <put-attribute name="css" value="/jobportal/css/joblist.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/seekerlist.jsp" />       
+    </definition>
+    <definition name="seekerMainProfile" extends="seekerLayout">
+        <put-attribute name="title" value="Thông tin" />   
+        <put-attribute name="css" value="/jobportal/css/mainProfile.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/mainProfile.jsp" />       
+    </definition>
+    <definition name="seekerApplication" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value="/jobportal/css/mainProfile.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/listApplication.jsp" />       
+    </definition>
+    <definition name="seekerCV" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value="/jobportal/css/mainProfile.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/CV.jsp" />       
+    </definition>
+    <definition name="seekerAddCV" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value=""/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/addCV.jsp" />       
+    </definition>
+    <definition name="addSkill" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value=""/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/addSkill.jsp" />       
+    </definition>
+    <definition name="addExp" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value=""/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/addExp.jsp" />       
+    </definition>
+    <definition name="addEdu" extends="seekerLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value=""/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/seeker/addEdu.jsp" />       
+    </definition>
     
-    
-    <!--COMPANY-HOME-->
+                            <!--COMPANY-HOME-->
+                            
     <definition name="compLayout" template="/WEB-INF/layout/base.jsp">
         <put-attribute name="title" value="...."/>
         <put-attribute name="cssmain" value="/jobportal/css/style-comp.css"/>
@@ -62,12 +110,37 @@ and open the template in the editor.
     <definition name="index-comp" extends="compLayout">
         <put-attribute name="title" value="Trang chu" />   
         <put-attribute name="css" value="/jobportal/css/test.css"/>     
-        <put-attribute name="content" value="/WEB-INF/jsp/comp/profile.jsp" />       
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/profile1.jsp" />       
     </definition>
     <definition name="testPost" extends="compLayout">
         <put-attribute name="title" value="Trang chu" />   
         <put-attribute name="css" value="/jobportal/css/test.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/comp/post.jsp" />       
+    </definition>
+    <definition name="testInfo" extends="compLayout">
+        <put-attribute name="title" value="Trang chu" />   
+        <put-attribute name="css" value="/jobportal/css/test.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/profile.jsp" />       
+    </definition>
+    <definition name="compRegister" extends="compLayout">
+        <put-attribute name="title" value="Đăng ký" />   
+        <put-attribute name="css" value="/jobportal/css/seeker-register.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/register.jsp" />       
+    </definition>
+    <definition name="compLogin" extends="compLayout">
+        <put-attribute name="title" value="Đăng nhập" />   
+        <put-attribute name="css" value="/jobportal/css/seeker-register.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/login.jsp" />       
+    </definition>
+    <definition name="cvList" extends="compLayout">
+        <put-attribute name="title" value="Danh sách" />   
+        <put-attribute name="css" value="/jobportal/css/joblist.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/cvList.jsp" />       
+    </definition>
+    <definition name="cvDetail" extends="compLayout">
+        <put-attribute name="title" value="Chi tiết" />   
+        <put-attribute name="css" value="/jobportal/css/cvDetail.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/cvDetail.jsp" />       
     </definition>
 </tiles-definitions>
 

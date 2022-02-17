@@ -5,6 +5,7 @@
  */
 package com.jp.configs;
 
+import com.jp.formatter.CareerFormatter;
 import com.jp.formatter.CompanyFormatter;
 import com.jp.formatter.JobFormatter;
 import com.jp.formatter.UserFormatter;
@@ -77,6 +78,7 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         registry.addFormatter(new JobFormatter());
         registry.addFormatter(new UserFormatter());
         registry.addFormatter(new CompanyFormatter());
+        registry.addFormatter(new CareerFormatter());
     }
     
     

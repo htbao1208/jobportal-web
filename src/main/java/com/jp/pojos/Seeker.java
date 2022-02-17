@@ -38,9 +38,6 @@ public class Seeker implements Serializable{
     private String address;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob;
-    private String education;
-    private String experience;
-    private String skill;
     
     //relationship
     @OneToOne(cascade = CascadeType.ALL)
@@ -52,6 +49,12 @@ public class Seeker implements Serializable{
     private Set<CV> cvs;
     @OneToMany(mappedBy = "seeker")
     private Set<Application> applications;
+    @OneToMany(mappedBy = "seeker")
+    private Set<Skill> skills;
+    @OneToMany(mappedBy = "seeker")
+    private Set<Education> educations;
+    @OneToMany(mappedBy = "seeker")
+    private Set<Experience> experiences;
 
     /**
      * @return the id
@@ -138,48 +141,6 @@ public class Seeker implements Serializable{
     }
 
     /**
-     * @return the education
-     */
-    public String getEducation() {
-        return education;
-    }
-
-    /**
-     * @param education the education to set
-     */
-    public void setEducation(String education) {
-        this.education = education;
-    }
-
-    /**
-     * @return the experience
-     */
-    public String getExperience() {
-        return experience;
-    }
-
-    /**
-     * @param experience the experience to set
-     */
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
-    /**
-     * @return the skill
-     */
-    public String getSkill() {
-        return skill;
-    }
-
-    /**
-     * @param skill the skill to set
-     */
-    public void setSkill(String skill) {
-        this.skill = skill;
-    }
-
-    /**
      * @return the user
      */
     public User getUser() {
@@ -233,5 +194,47 @@ public class Seeker implements Serializable{
      */
     public void setApplications(Set<Application> applications) {
         this.applications = applications;
+    }
+
+    /**
+     * @return the skills
+     */
+    public Set<Skill> getSkills() {
+        return skills;
+    }
+
+    /**
+     * @param skills the skills to set
+     */
+    public void setSkills(Set<Skill> skills) {
+        this.skills = skills;
+    }
+
+    /**
+     * @return the educations
+     */
+    public Set<Education> getEducations() {
+        return educations;
+    }
+
+    /**
+     * @param educations the educations to set
+     */
+    public void setEducations(Set<Education> educations) {
+        this.educations = educations;
+    }
+
+    /**
+     * @return the experiences
+     */
+    public Set<Experience> getExperiences() {
+        return experiences;
+    }
+
+    /**
+     * @param experiences the experiences to set
+     */
+    public void setExperiences(Set<Experience> experiences) {
+        this.experiences = experiences;
     }
 }

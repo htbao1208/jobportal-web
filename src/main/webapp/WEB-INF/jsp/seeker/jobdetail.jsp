@@ -1,6 +1,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+<c:url value="/joblist/${job.id}" var="action"/>
 <!DOCTYPE html>
 <div class="page-header" style="background: url(<c:url value="/images/banner.png"/>);>
     <div class="container">
@@ -20,25 +24,30 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="header-detail">
                     <div class="header-content float-left">
-                        <h3>Front-end developer</a></h3>
-                        <p><span>Date Posted: Feb 20, 2018</span></p>
-                        <p>Monthly Salary: <strong class="price">$7000 - $7500</strong></p>
+                        <h3>${job.title}</a></h3>
+                        <p><span>Ngày đăng: ${job.createdDate}</span></p>
+                        <p>Monthly Salary: <strong class="price">${job.salary}</strong></p>
                     </div>
                     <div class="detail-company float-right text-right">
                         <div class="img-thum">
-                            <img src="<c:url value="/images/Natasha.png"/>" alt="">
+                            <img class="rounded" width="80" height="80" src="<c:url value="${job.company.logo}"/>" alt="">
                         </div>
                         <div class="name">
-                            <h4>LemonKids LLC</h4>
-                            <h5>New York, NY </h5>
-                            <p>8 Current jobs openings</p>
+                            <h4>${job.company.compName}</h4>
+                            <h5>${job.company.address} </h5>
+                            <p>-----------</p>
                         </div>
                     </div>
                     
                     <div class="clearfix">
                         <hr>
                         <div class="center p-2">
-                            <span><a class="btn btn-border btn-sm btn-outline-success" href="#">Ứng tuyển</a></span>                            
+                            <form:form method="post" action="${action}" modelAttribute="application">                             
+                            <sec:authorize access="isAuthenticated()">
+                                <span><input class="btn btn-border btn-sm btn-outline-success" type="submit" value="Ứng tuyển"></span>   
+                             </sec:authorize>
+                             </form:form>
+                                                     
                         </div>
                     </div>
                 </div>
@@ -48,15 +57,15 @@
                     <div class="clearfix">
                         <div class="box">
                             <h4>Job Description</h4>
-                            <p>LemonKids LLC. In marketing communications, we dream it and create it. All of the company’s promotional and communication needs are completed in-house by these “creatives” in an advertising agency-based set-up. This includes everything from advertising, promotions and print production to media relations, exhibition coordination and website maintenance. Everyone from artists, writers, designers, media buyers, event coordinators, video producers/editors and public relations specialists work together to bring campaigns and product-centric promotions to life.</p>
-                            <p>If you’re a dreamer, gather up your portfolio and show us your vision. Garmin is adding one more enthusiastic individual to our in-house Communications expert team.</p>
-                            <h4>Qualification</h4>
-                            <p>Minimum of 5 years creative experience in a graphic design studio or advertising ad agency environment is required. Qualified candidates for this role will possess the following education, experience and skills:</p>
-                            <ul>
+                            <p>${job.description}</p>
+                            
+                            <h4>Kinh nghiệm</h4>
+                            <p>${job.exp}</p>
+<!--                            <ul>
                                 <li><i class="ti-check-box"></i>Demonstrated strong and effective verbal, written, and interpersonal communication skills</li>
                                 <li><i class="ti-check-box"></i>Must be team-oriented, possess a positive attitude and work well with others</li>
                                 <li><i class="ti-check-box"></i>Ability to prioritize and multi-task in a flexible, fast paced and challenging environment</li>
-                            </ul>
+                            </ul>-->
                             <h4>Key responsibilities also include</h4>
                             <ul>
                                 <li><i class="ti-check-box"></i>Provide technical health advice to Head of Country Programmes and field advisors at all key stages of the project management cycle including needs assessment.</li>

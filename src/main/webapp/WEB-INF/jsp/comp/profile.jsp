@@ -5,9 +5,10 @@
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<c:url value="/company" var="action"/>
+<c:url value="/company/info" var="action"/>
 <div class="container">
     <form:form class="" method="post" action="${action}" modelAttribute="company" enctype="multipart/form-data">
         <div class="avatar-wrapper">            

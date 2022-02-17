@@ -25,27 +25,46 @@ public class UserController {
     private UserService userDetailsService;
     
     @GetMapping("/seeker-register")
-    public String skregisterView(Model model){
+    public String skRegisterView(Model model){
         model.addAttribute("user", new User());
         return "seekerRegister";
     }
     
-    @GetMapping("/seeker-login")
-    public String sklogin(){
+    @GetMapping("/login")
+    public String skLogin(){
         return "seekerLogin";
     }
     
     @PostMapping("/seeker-register")
-    public String skregister(Model model, @ModelAttribute(value = "user") User user){
+    public String skRegister(Model model, @ModelAttribute(value = "user") User user){
         String errMsg = "";
-        
+        user.setUserRole(User.SEEKER);
         if(user.getPassword().equals(user.getConfirmPassword())){
             if(this.userDetailsService.addUser(user) == true)
-                return "redirect:/seeker-login";
+                return "redirect:/login";
             else
                 errMsg="Da co loi xay ra";
         } else
             errMsg= "Mat khau khong khop";   
         return "seeker-register";
     }   
+    @GetMapping("/comp-register")
+    public String compRegisterView(Model model){
+        model.addAttribute("user", new User());
+        return "compRegister";
+    }  
+    
+    @PostMapping("/comp-register")
+    public String compRegister(Model model, @ModelAttribute(value = "user") User user){
+        String errMsg = "";
+        user.setUserRole(User.COMPANY);
+        if(user.getPassword().equals(user.getConfirmPassword())){
+            if(this.userDetailsService.addUser(user) == true)
+                return "redirect:/login";
+            else
+                errMsg="Da co loi xay ra";
+        } else
+            errMsg= "Mat khau khong khop";   
+        return "compRegister";
+    }  
 }

@@ -85,18 +85,24 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin().loginPage("/seeker-login")
+        http.formLogin().loginPage("/login")
                 .usernameParameter("username")
-                .passwordParameter("password");
-
-        http.formLogin().defaultSuccessUrl("/").failureUrl("/seeker-login?error");
-        http.formLogin().successHandler(loginSuccessHandler);
+                .passwordParameter("password")
+                .defaultSuccessUrl("/")
+                
+                .failureUrl("/login?error");
+        
+        
+        http.formLogin().successHandler(this.loginSuccessHandler);
 
         //        http.logout().logoutSuccessUrl("/login");
-        http.logout().logoutSuccessHandler(logoutHandler);
+        http.logout().logoutSuccessHandler(this.logoutHandler);
 
-        http.exceptionHandling().accessDeniedPage("/seeker-login?accessDenied");
-        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
+        http.exceptionHandling().accessDeniedPage("/login?accessDenied");
+        http.authorizeRequests().antMatchers("/").permitAll()
+                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/seeker/**").access("hasRole('ROLE_SEEKER')")
+                .antMatchers("/company/**").access("hasRole('ROLE_COMPANY')");
         
         http.csrf().disable();
     }

@@ -4,8 +4,8 @@
     Author     : kid03
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <c:url value="/company/post" var="action"/>
 <div class="container">
@@ -26,7 +26,7 @@
                 <form:option value="Part-time" label="Part-time"/>
                 <form:option value="Full-time" label="Full-time"/>
             </form:select>
-            <label class="form-label" for="address">Loại công việc</label>
+            <label class="form-label" for="jobType">Loại công việc</label>
         </div>
         <div class="form-group">
             <form:input type="text" id="address" path="address" class="form-control form-control-lg" />

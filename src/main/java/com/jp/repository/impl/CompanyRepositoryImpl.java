@@ -83,8 +83,7 @@ public class CompanyRepositoryImpl implements CompanyRepository{
         query = query.select(root);
         
         Predicate p = builder.equal(root.get("user"), id);
-        query = query.where(p);
-        
+        query = query.where(p);     
         
         
         

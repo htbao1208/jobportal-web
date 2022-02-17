@@ -59,5 +59,7 @@ public class UserRepositoryImpl implements UserRepository{
         Query q = session.createQuery(query);
         return q.getResultList();
     }
+
+   
     
 }

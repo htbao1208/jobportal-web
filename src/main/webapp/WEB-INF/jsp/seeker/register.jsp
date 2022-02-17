@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px; margin-top: 20px; margin-bottom: 20px;">
                         <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                            <h2 class="text-uppercase text-center mb-5">Đăng ký ứng viên</h2>
 
                             <form:form class="register-form" method="post" action="${action}"  modelAttribute="user"  enctype="multipart/form-data">
 
@@ -44,7 +44,7 @@
                                     <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Đăng ký"/>
                                 </div>
 
-                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="<c:url value="/seeker-login"/>" class="fw-bold text-body"><u>Login here</u></a></p>
+                                <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản? <a href="<c:url value="/seeker-login"/>" class="fw-bold text-body"><u>Đăng nhập.</u></a></p>
 
                             </form:form>
 

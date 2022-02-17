@@ -7,13 +7,19 @@ package com.jp.controllers;
 
 
 
+import com.jp.service.CVService;
+import com.jp.service.CareerService;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -23,23 +29,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @ControllerAdvice
-public class HomeController {    
+public class HomeController {
+    @Autowired
+    private CareerService careerService;
+    @Autowired
+    private CVService cVService;
+    
     @RequestMapping("/")
     public String index(Model model){        
         return "index";
-    }
-    
-    @RequestMapping("/joblist")
-    public String joblist(){
-        return "jobList";
-    }
-    @RequestMapping("/job/jobdetail")
-    public String jobdetail(){
-        return "jobDetail";
-    }
+    }    
     @ModelAttribute
     public void commonAttrs(Model model, HttpSession session) {        
         model.addAttribute("currentUser", session.getAttribute("currentUser"));
+        model.addAttribute("careers", this.careerService.getCareers());
     }
 
 }

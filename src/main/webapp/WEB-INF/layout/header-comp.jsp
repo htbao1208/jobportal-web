@@ -18,7 +18,7 @@
                     <a class="nav-link active" href="<c:url value="/company"/>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="#"/>">Find Seeker</a>
+                    <a class="nav-link" href="<c:url value="/comp/cvlist"/>">Find Seeker</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/company/post"/>">XXX</a>
@@ -33,8 +33,8 @@
                             <span>Đăng ký</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-center">                                                      
-                            <a class="dropdown-item" href="<c:url value="/seeker-register"/>">Đăng ký</a>
-                            <a class="dropdown-item"  href="<c:url value="/seeker-login"/>">Đăng nhập</a>                         
+                            <a class="dropdown-item" href="<c:url value="/comp-register"/>">Đăng ký</a>
+                            <a class="dropdown-item"  href="<c:url value="/login"/>">Đăng nhập</a>                         
                         </div>
                     </li>
                 </c:if>

@@ -34,11 +34,11 @@ public class JobRepositoryImpl implements JobRepository{
     public boolean addJob(Job job) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         try {
-            session.save(job);            
+            session.save(job);     
             return true;
         } catch (Exception ex) {
             System.err.println("--- add or update job error ---" + ex.getMessage());
-            
+            ex.printStackTrace();
         }
         
         return false;
@@ -62,7 +62,7 @@ public class JobRepositoryImpl implements JobRepository{
         
         Query q = session.createQuery(query);
         
-        int max = 9;
+        int max = 20;
         q.setMaxResults(max);
         q.setFirstResult((page - 1) * max);
         

@@ -22,7 +22,7 @@ public class LogoutHandler implements LogoutSuccessHandler{
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication a) throws IOException, ServletException {
         request.getSession().removeAttribute("currentUser");
         
-        response.sendRedirect("/jobportal/seeker-login");
+        response.sendRedirect("/jobportal/login");
     }
     
 }

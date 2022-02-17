@@ -28,16 +28,27 @@ public class CompanyController {
 
     @GetMapping("/company")
     public String index(Model model, HttpSession session) {
+//        User user = (User) session.getAttribute("currentUser");
+//        System.out.println(this.companyService.getCompByUserId(user.getId()));
+//        if(this.companyService.getCompByUserId(user.getId()).isEmpty())            
+//            model.addAttribute("company", new Company());
+//        else    
+//            model.addAttribute("company", this.companyService.getCompByUserId(user.getId()).get(0));        
+        return "index-comp";
+    }
+
+    @GetMapping("/company/info")
+    public String compView(Model model, HttpSession session) {
         User user = (User) session.getAttribute("currentUser");
         System.out.println(this.companyService.getCompByUserId(user.getId()));
         if(this.companyService.getCompByUserId(user.getId()).isEmpty())            
             model.addAttribute("company", new Company());
         else    
             model.addAttribute("company", this.companyService.getCompByUserId(user.getId()).get(0));        
-        return "index-comp";
+        return "testInfo";
     }
 
-    @PostMapping("/company")
+    @PostMapping("/company/info")
     public String addComp(Model model,
             @ModelAttribute(value = "company") Company company,
             HttpSession session) {
@@ -45,13 +56,14 @@ public class CompanyController {
         
         User user = (User) session.getAttribute("currentUser");
         company.setUser(user);
+        System.out.println("Comp: " + company.getCompName());
         if (this.companyService.addOrUpdate(company) == true) {
             return "redirect:/company";
         } else {
             errMsg = "Da co loi xay ra";
         }
 
-        return "index-comp";
+        return "testInfo";
 
     }
 //    @GetMapping("/show")
