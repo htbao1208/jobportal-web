@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jp.repository;
+package com.jp.service;
 
-import com.jp.pojos.User;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author kid03
  */
-public interface UserRepository {
-    boolean addUser(User user);    
-    List<User> getUsers(String username);
-    boolean deleteUser(int id);
-    User getUserById(int id);
+public interface StatsService {
+    List<Object[]> careerStats(Date fromDate, Date toDate);
 }

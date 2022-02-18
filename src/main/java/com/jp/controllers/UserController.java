@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -66,5 +67,11 @@ public class UserController {
         } else
             errMsg= "Mat khau khong khop";   
         return "compRegister";
-    }  
+    }
+    
+    @GetMapping("/admin/user/delete/{id}")
+    public String deleteUser(@PathVariable(name = "id") int id){
+        this.userDetailsService.deleteUser(id);
+        return "redirect:/admin/main";
+    }
 }

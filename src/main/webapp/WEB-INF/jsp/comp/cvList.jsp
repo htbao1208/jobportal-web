@@ -68,7 +68,7 @@
                                     <img class="mr-1 rounded-circle" src="<c:url value="${j.seeker.user.userImg}"/>"  width="25" height="25" alt="avatar">
                                 </div>
                                 <div class="job-content">
-                                    <a href="<c:url value="/joblist/${j.id}"/>"><h5 class="text-center text-md-left">${j.title}</h5></a>
+                                    <a href="<c:url value="/company/cvList/${j.id}"/>"><h5 class="text-center text-md-left">${j.title}</h5></a>
 
                                     <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
                                         <li class="mr-md-4">

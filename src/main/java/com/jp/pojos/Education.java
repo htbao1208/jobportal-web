@@ -28,6 +28,7 @@ public class Education implements Serializable{
     private String degree;
     @Column(name = "schoolname")
     private String schoolName;
+    private String industry;
     
     //relationship
     @ManyToOne
@@ -88,5 +89,19 @@ public class Education implements Serializable{
      */
     public void setSeeker(Seeker seeker) {
         this.seeker = seeker;
+    }
+
+    /**
+     * @return the industry
+     */
+    public String getIndustry() {
+        return industry;
+    }
+
+    /**
+     * @param industry the industry to set
+     */
+    public void setIndustry(String industry) {
+        this.industry = industry;
     }
 }

@@ -14,7 +14,10 @@ import java.util.List;
  */
 public interface JobService {
     boolean addJob(Job job);
-    List<Job> listJobs(String kw, int page);
+    List<Job> listJobs(String kw, String jobType, int page);
     long countPost();
     Job getJobById(int i);
+    List<Job> listJobByIdComp(int id, int page);
+    long countPost(int id);
+    boolean deleteJob(int id);
 }

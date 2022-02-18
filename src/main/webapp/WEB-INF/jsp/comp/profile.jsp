@@ -11,10 +11,15 @@
 <c:url value="/company/info" var="action"/>
 <div class="container">
     <form:form class="" method="post" action="${action}" modelAttribute="company" enctype="multipart/form-data">
-        <div class="avatar-wrapper">            
-            <img class="profile-pic"  src="" />
+        <div class="avatar-wrapper">               
+            <c:if test="${company.id > 0}">
+                <img src="<c:url value="${company.logo}"/>" width="200" height="200" class="profile-pic"/>
+            </c:if>
+            <c:if test="${company.id <= 0}">
+                <img src="" class="profile-pic"/>
+            </c:if>
+            
             <div class="upload-button">
-<!--                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>-->
             </div>
             <form:input class="file-upload" type="file" path="file" accept="image/*"/>
         </div>
@@ -38,11 +43,7 @@
             <form:input type="text" id="address" path="address" class="form-control form-control-lg" />
             <label class="form-label" for="address">Địa chỉ</label>
         </div>
-        <!--<div class="form-group">-->
-            <%--<form:input type="file" id="file" path="file" class="form-control form-control-lg" />--%>
-            <!--<label class="form-label" for="file">Logo</label>-->
-        <!--</div>-->
-        <%--<form:hidden path="id" />--%>
+        <form:hidden path="id" />
 
 
         <div class="d-flex justify-content-center">

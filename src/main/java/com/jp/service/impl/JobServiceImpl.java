@@ -27,8 +27,8 @@ public class JobServiceImpl implements JobService{
     }
 
     @Override
-    public List<Job> listJobs(String kw, int page) {
-        return this.jobRepository.listJobs(kw, page);
+    public List<Job> listJobs(String kw, String jobType, int page) {
+        return this.jobRepository.listJobs(kw, jobType, page);
     }
 
     @Override
@@ -39,6 +39,21 @@ public class JobServiceImpl implements JobService{
     @Override
     public Job getJobById(int i) {
         return this.jobRepository.getJobById(i);
+    }
+
+    @Override
+    public List<Job> listJobByIdComp(int id, int page) {
+        return this.jobRepository.listJobByIdComp(id, page);
+    }
+
+    @Override
+    public long countPost(int id) {
+        return this.jobRepository.countPost(id);
+    }
+
+    @Override
+    public boolean deleteJob(int i) {
+        return this.jobRepository.deleteJob(i);
     }
     
 }

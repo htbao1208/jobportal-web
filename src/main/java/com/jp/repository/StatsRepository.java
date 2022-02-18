@@ -5,16 +5,13 @@
  */
 package com.jp.repository;
 
-import com.jp.pojos.User;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author kid03
  */
-public interface UserRepository {
-    boolean addUser(User user);    
-    List<User> getUsers(String username);
-    boolean deleteUser(int id);
-    User getUserById(int id);
+public interface StatsRepository {
+    List<Object[]> careerStats(Date fromDate, Date toDate);
 }

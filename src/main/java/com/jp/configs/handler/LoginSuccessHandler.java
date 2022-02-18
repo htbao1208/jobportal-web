@@ -30,7 +30,9 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler{
         if(u.getUserRole().equals(User.SEEKER)){
             response.sendRedirect("/jobportal");
         } else if(u.getUserRole().equals(User.COMPANY)) {
-            response.sendRedirect("/jobportal/company");
+            response.sendRedirect("/jobportal/companyview");
+        } else if(u.getUserRole().equals(User.ADMIN)){
+            response.sendRedirect("/jobportal/admin/main");
         }
     }
     

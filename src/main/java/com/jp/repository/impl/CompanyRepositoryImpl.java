@@ -33,7 +33,7 @@ public class CompanyRepositoryImpl implements CompanyRepository{
     public boolean addOrUpdate(Company comp) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         try {
-            session.save(comp);            
+            session.saveOrUpdate(comp);            
             return true;
         } catch (Exception ex) {
             System.err.println("--- add or update comp error ---" + ex.getMessage());

@@ -21,10 +21,10 @@
                     <a class="nav-link" href="<c:url value="/joblist"/>">Find Job</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Company</a>
+                    <a class="nav-link" href="javascript:;" onclick="updating()">Company</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="javascript:;" onclick="updating()">Contact</a>
                 </li>                
                 <c:if test="${pageContext.request.userPrincipal.name == null}">
                     <li class="nav-item dropdown">
@@ -56,7 +56,7 @@
                     </li>
                 </c:if>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/company"/>">For Company</a>
+                    <a class="nav-link" href="<c:url value="/companyview"/>">For Company</a>
                 </li>
             </ul>
         </div>

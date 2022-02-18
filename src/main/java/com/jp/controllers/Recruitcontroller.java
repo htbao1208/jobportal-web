@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.jp.controllers;
 
-import com.jp.pojos.Seeker;
+import com.jp.pojos.Company;
 import com.jp.pojos.User;
-import com.jp.service.ApplicationService;
-import com.jp.service.SeekerService;
+import com.jp.service.CompanyService;
+import com.jp.service.RecruitService;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,29 +23,29 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author kid03
  */
 @Controller
-public class ApplicationController {
+public class Recruitcontroller {
     @Autowired
-    private ApplicationService applicationService;
+    private RecruitService recruitService;
     @Autowired
-    private SeekerService seekerService;
+    private CompanyService companyService;
     
-    @GetMapping("/seeker/application/delete/{id}")
-    public String deleteApplication(@PathVariable(name = "id") int id){
-        this.applicationService.deleteApplication(id);
-        return "redirect:/seeker/main";
-    }
     
-    @GetMapping("/seeker/listApplication")
+    @GetMapping("/company/listRecruit")
     public String listApplication(Model model, HttpSession session, @RequestParam(required = false) Map<String, String> params){
         User user = (User) session.getAttribute("currentUser");  
         //Show application
         int page = Integer.parseInt(params.getOrDefault("page", "1"));
-        Seeker seeker = this.seekerService.getSeekerByUserId(user.getId()).get(0);
+        Company company = this.companyService.getCompByUserId(user.getId()).get(0);
             
-        model.addAttribute("counter", this.applicationService.countApplied(seeker.getId()));
-        model.addAttribute("listApply", this.applicationService.getApplicationsByIdSeeker(seeker.getId(),page));
+        model.addAttribute("counter", this.recruitService.countRecruit(company.getId()));
+        model.addAttribute("listr", this.recruitService.getRecruitsByIdCompany(company.getId(),page));
 //            System.out.println(this.applicationService.getApplicationsByIdSeeker(page));
-        return "seekerApplication";
+        return "companyRecruit";
     }
     
+    @GetMapping("/company/recruit/delete/{id}")
+    public String deleteApplication(@PathVariable(name = "id") int id){
+        this.recruitService.deleteRecruit(id);
+        return "redirect:/company/listRecruit";
+    }
 }

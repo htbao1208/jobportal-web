@@ -60,7 +60,7 @@ public class JobController {
         job.setCreatedDate(date);
         job.setCompany(company);
         if (this.jobService.addJob(job) == true) {
-            return "redirect:/";
+            return "redirect:/company/listJob";
         } else {
             errMsg = "Da co loi xay ra";
         }
@@ -72,8 +72,9 @@ public class JobController {
     @GetMapping("/joblist")
     public String search(Model model, @RequestParam(required = false) Map<String, String> params){
         String kw = params.getOrDefault("kw", null);
+        String jobType = params.getOrDefault("jobType", null);
         int page = Integer.parseInt(params.getOrDefault("page", "1"));
-        model.addAttribute("list", this.jobService.listJobs(kw, page));
+        model.addAttribute("list", this.jobService.listJobs(kw, jobType, page));
         
         model.addAttribute("jCounter", this.jobService.countPost());
         return "jobList";
@@ -104,5 +105,22 @@ public class JobController {
         }
         else
             return"jobDetail";
+    }
+    
+    @GetMapping("/company/listJob")
+    public String listJobComp(Model model, HttpSession session, @RequestParam(required = false) Map<String, String> params){
+        User user = (User) session.getAttribute("currentUser");
+        int page = Integer.parseInt(params.getOrDefault("page", "1"));
+        Company company = this.companyService.getCompByUserId(user.getId()).get(0);
+        
+        model.addAttribute("counter", this.jobService.countPost(company.getId()));
+        model.addAttribute("listJ", this.jobService.listJobByIdComp(company.getId(), page));
+        
+        return "companyListJob";
+    }
+    @GetMapping("/company/job/delete/{id}")
+    public String deleteJob(@PathVariable(name = "id") int id){
+        this.jobService.deleteJob(id);
+        return "redirect:/company/listJob";
     }
 }

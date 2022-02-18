@@ -30,12 +30,24 @@ public class CompanyServiceImpl implements CompanyService{
     @Override
     public boolean addOrUpdate(Company company) {
         try {
-            Map r = this.cloudinary.uploader().upload(company.getFile().getBytes(), ObjectUtils.asMap("resource_type", "auto"));
+        if(company.getId() > 0){ // update
+            if(company.getFile().getBytes().length == 0){
+                Company c = this.companyRepository.getCompanyById(company.getId());
+                company.setLogo(c.getLogo());
+            } else {
+                Map r = this.cloudinary.uploader().upload(company.getFile().getBytes(), ObjectUtils.asMap("resource_type", "auto"));
+                company.setLogo((String) r.get("secure_url"));
+                
+            }
+        } else { //add
+                Map r = this.cloudinary.uploader().upload(company.getFile().getBytes(), ObjectUtils.asMap("resource_type", "auto"));
+
+                company.setLogo((String) r.get("secure_url"));
             
-            company.setLogo((String) r.get("secure_url"));
-        } catch (IOException ex) {
-            System.err.println("Da co loi xay ra" + ex.getMessage());
         }
+        } catch (IOException ex) {
+                    System.err.println("Da co loi xay ra" + ex.getMessage());
+                }
         return this.companyRepository.addOrUpdate(company);
     }
 

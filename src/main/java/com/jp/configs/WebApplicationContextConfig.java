@@ -16,6 +16,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -35,9 +37,9 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {
     "com.jp.controllers",
     "com.jp.repository",
-    "com.jp.service"
+    "com.jp.service",
 })
-public class WebApplicationContextConfig implements WebMvcConfigurer{
+public class WebApplicationContextConfig implements WebMvcConfigurer{    
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -58,14 +60,14 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         
         return resolver;
     }
-    @Bean
-    public MessageSource messageSource(){
-        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
-        source.setBasename("messages");
+     @Bean
+    public MessageSource messageSource() {
+         ResourceBundleMessageSource message = new ResourceBundleMessageSource();
         
-        return source;
+        message.setBasename("messages");
+        
+        return message;
     }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/images/**").addResourceLocations("/resources/images/");
@@ -80,7 +82,6 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         registry.addFormatter(new CompanyFormatter());
         registry.addFormatter(new CareerFormatter());
     }
-    
     
         
 }

@@ -7,8 +7,11 @@ package com.jp.controllers;
 
 
 
+import com.jp.pojos.Company;
+import com.jp.pojos.User;
 import com.jp.service.CVService;
 import com.jp.service.CareerService;
+import com.jp.service.CompanyService;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +37,8 @@ public class HomeController {
     private CareerService careerService;
     @Autowired
     private CVService cVService;
+    @Autowired
+    private CompanyService companyService;
     
     @RequestMapping("/")
     public String index(Model model){        
@@ -42,7 +47,7 @@ public class HomeController {
     @ModelAttribute
     public void commonAttrs(Model model, HttpSession session) {        
         model.addAttribute("currentUser", session.getAttribute("currentUser"));
-        model.addAttribute("careers", this.careerService.getCareers());
+        model.addAttribute("careers", this.careerService.getCareers());        
     }
 
 }

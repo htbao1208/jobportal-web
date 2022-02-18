@@ -142,5 +142,42 @@ and open the template in the editor.
         <put-attribute name="css" value="/jobportal/css/cvDetail.css"/>     
         <put-attribute name="content" value="/WEB-INF/jsp/comp/cvDetail.jsp" />       
     </definition>
+    <definition name="mainComp" extends="compLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value="/jobportal/css/mainProfile.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/mainComp.jsp" />       
+    </definition>
+    <definition name="companyRecruit" extends="compLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value="/jobportal/css/mainProfile.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/listRecruit.jsp" />       
+    </definition>
+    <definition name="companyListJob" extends="compLayout">
+        <put-attribute name="title" value="Danh sách ứng tuyển" />   
+        <put-attribute name="css" value="/jobportal/css/mainProfile.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/comp/listJob.jsp" />       
+    </definition>
+    
+                                <!--ADMIN-->
+    <definition name="adminLayout" template="/WEB-INF/layout/base-admin.jsp">
+        <put-attribute name="title" value="...."/>
+        <put-attribute name="cssmain" value="/jobportal/baseAdmin.css"/>
+        <put-attribute name="css" value=""/>
+        <put-attribute name="header" value="/WEB-INF/layout/header-admin.jsp" />
+        <put-attribute name="subheader" value="" />
+        <put-attribute name="content" value=""/>
+        <put-attribute name="script" value=""/>
+        <put-attribute name="footer" value="" />
+    </definition>
+    <definition name="careerStats" extends="adminLayout">
+        <put-attribute name="title" value="" />   
+        <put-attribute name="css" value=""/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/careerStats.jsp" />       
+    </definition>
+    <definition name="mainAdmin" extends="adminLayout">
+        <put-attribute name="title" value="" />   
+        <put-attribute name="css" value=""/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/main.jsp" />       
+    </definition>
 </tiles-definitions>
 

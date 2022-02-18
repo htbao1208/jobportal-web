@@ -15,6 +15,10 @@
             <form:input type="text" path="schoolName" class="form-control form-control-lg" />            
         </div> 
         <div class="form-group">
+            <label class="form-label">Industry</label>
+            <form:input type="text" path="industry" class="form-control form-control-lg" />            
+        </div> 
+        <div class="form-group">
             <label class="form-label">Degree</label>
             <form:select class="form-control" path="degree">
                 <form:option value="Associate">Associate</form:option>

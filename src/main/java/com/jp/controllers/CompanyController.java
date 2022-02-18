@@ -26,14 +26,8 @@ public class CompanyController {
     @Autowired
     private CompanyService companyService;
 
-    @GetMapping("/company")
+    @GetMapping("/companyview")
     public String index(Model model, HttpSession session) {
-//        User user = (User) session.getAttribute("currentUser");
-//        System.out.println(this.companyService.getCompByUserId(user.getId()));
-//        if(this.companyService.getCompByUserId(user.getId()).isEmpty())            
-//            model.addAttribute("company", new Company());
-//        else    
-//            model.addAttribute("company", this.companyService.getCompByUserId(user.getId()).get(0));        
         return "index-comp";
     }
 
@@ -58,7 +52,7 @@ public class CompanyController {
         company.setUser(user);
         System.out.println("Comp: " + company.getCompName());
         if (this.companyService.addOrUpdate(company) == true) {
-            return "redirect:/company";
+            return "redirect:/company/mainComp";
         } else {
             errMsg = "Da co loi xay ra";
         }
@@ -66,8 +60,21 @@ public class CompanyController {
         return "testInfo";
 
     }
-//    @GetMapping("/show")
-//    public String show (Model model, HttpSession session){
-//        
-//    }
+    @GetMapping("/company/mainComp")
+    public String mainComp(Model model, HttpSession session){
+        User user = (User) session.getAttribute("currentUser");
+        if(this.companyService.getCompByUserId(user.getId()).isEmpty()){
+            System.out.print("FALSE: ");
+            model.addAttribute("company", null);          
+        }
+        else{
+            Company comp = this.companyService.getCompByUserId(user.getId()).get(0);
+            //Show info seeker
+            System.out.print("TRUE: ");            
+            model.addAttribute("company", comp);
+        }
+        return "mainComp";   
+    }
+    
+    
 }

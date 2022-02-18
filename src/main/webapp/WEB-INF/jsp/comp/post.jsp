@@ -12,38 +12,47 @@
     <form:form class="" method="post" action="${action}" modelAttribute="job">        
 
         <div class="form-group">
+            <label class="form-label" for="title">Topic</label>
             <form:input type="text" id="title" path="title" class="form-control form-control-lg" />
-            <label class="form-label" for="title">Tên bài tuyển</label>
         </div>
 
         <div class="form-group">
+            <label class="form-label" for="description">Job Description</label>
             <form:textarea id="description" path="description" class="form-control form-control-lg" />
-            <label class="form-label" for="description">Mô tả công việc</label>
         </div>
         <div class="form-group">
+            <label class="form-label" for="jobType">Job Type</label>
             <form:select class="form-control" id="jobtype" path="jobType">
-                <form:option value="Thực tập" label="Thực tập" />
+                <form:option value="Intership" label="Intership" />
                 <form:option value="Part-time" label="Part-time"/>
                 <form:option value="Full-time" label="Full-time"/>
             </form:select>
-            <label class="form-label" for="jobType">Loại công việc</label>
         </div>
         <div class="form-group">
+            <label class="form-label">Career</label>
+            <form:select class="form-control" path="career">
+                <c:forEach var="c" items="${careers}">
+                    <form:option value="${c.id}">${c.name}</form:option>
+                </c:forEach>
+            </form:select>            
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="address">Address</label>
             <form:input type="text" id="address" path="address" class="form-control form-control-lg" />
-            <label class="form-label" for="address">Địa chỉ</label>
         </div>
             <div class="form-group">
+            <label class="form-label" for="exp">Experience</label>
             <form:input type="text" id="exp" path="exp" class="form-control form-control-lg" />
-            <label class="form-label" for="exp">exp</label>
         </div>
          <div class="form-group">
+            <label class="form-label" for="salary">Salary</label>
             <form:input type="text" id="salary" path="salary" class="form-control form-control-lg" />
-            <label class="form-label" for="salary">Lương</label>
         </div>
         <!--<div class="form-group">-->
         <%--<form:input type="file" id="file" path="file" class="form-control form-control-lg" />--%>
         <!--<label class="form-label" for="file">Logo</label>-->
         <!--</div>-->
+        <form:hidden path="id" />
         
 
 

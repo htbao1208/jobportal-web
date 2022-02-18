@@ -6,11 +6,18 @@
 package com.jp.controllers;
 
 import com.jp.pojos.CV;
+import com.jp.pojos.Company;
+import com.jp.pojos.Recruit;
 import com.jp.pojos.Seeker;
 import com.jp.pojos.User;
 import com.jp.service.CVService;
 import com.jp.service.CareerService;
+import com.jp.service.CompanyService;
+import com.jp.service.EducationService;
+import com.jp.service.ExperienceService;
+import com.jp.service.RecruitService;
 import com.jp.service.SeekerService;
+import com.jp.service.SkillService;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +41,16 @@ public class CVController {
     private SeekerService seekerService;
     @Autowired
     private CareerService careerService;
+    @Autowired
+    private SkillService skillService;
+    @Autowired
+    private ExperienceService experienceService;
+    @Autowired
+    private EducationService educationService;
+    @Autowired
+    private CompanyService companyService;
+    @Autowired
+    private RecruitService recruitService;
     
     
     @GetMapping("/seeker/CV")
@@ -81,9 +98,35 @@ public class CVController {
         return "cvList";
     }
     
-    @GetMapping("/company/cvlist/{id}")
-    public String cvDetail(){
+    @GetMapping("/company/cvList/{id}")
+    public String cvDetail(Model model,@PathVariable(value = "id") Integer id, HttpSession session){
+        model.addAttribute("cv", this.cVService.getCVById(id));
+        //add recruit
+        model.addAttribute("recruit", new com.jp.pojos.Recruit());
+        //Check
+        User user = (User) session.getAttribute("currentUser");
+        model.addAttribute("compCheck", this.companyService.getCompByUserId(user.getId()));
         
+        CV cv = this.cVService.getCVById(id);
+        model.addAttribute("skills", this.skillService.getSkillsBySeekerId(cv.getSeeker().getId()));
+        model.addAttribute("exps", this.experienceService.getExperiencesBySeekerId(cv.getSeeker().getId()));
+        model.addAttribute("edus", this.educationService.getEducationsBySeekerId(cv.getSeeker().getId()));
         return "cvDetail";
+    }
+    @PostMapping("/company/cvList/{id}")
+    public String addRecruit(@ModelAttribute(value = "recruit") Recruit recruit
+            , @PathVariable(value = "id") Integer id, HttpSession session){
+        User user = (User) session.getAttribute("currentUser");
+        Company comp = this.companyService.getCompByUserId(user.getId()).get(0);
+        CV cv = this.cVService.getCVById(id);
+        recruit.setCompany(comp);
+        recruit.setCv(cv);
+        if(this.recruitService.addRecruit(recruit) == true){
+            System.out.print("Complete");
+            return "redirect:/";
+        }
+        else
+            return"cvDetail";
+        
     }
 }

@@ -23,7 +23,7 @@
                     <a class="list-group-item list-group-item-action" href="#password">
                       Password
                     </a>
-                    <a class="list-group-item list-group-item-action" href="<c:url value="/seeker/listAppication"/>">
+                    <a class="list-group-item list-group-item-action" href="<c:url value="/seeker/listApplication"/>">
                       List Application
                     </a>
                     <a class="list-group-item list-group-item-action active" href="<c:url value="/seeker/CV"/>">

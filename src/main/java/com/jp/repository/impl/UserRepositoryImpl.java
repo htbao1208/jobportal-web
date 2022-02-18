@@ -60,6 +60,29 @@ public class UserRepositoryImpl implements UserRepository{
         return q.getResultList();
     }
 
+    @Override
+    public boolean deleteUser(int id) {
+        try {
+            Session session = this.sessionFactory.getObject().getCurrentSession();
+            User u = session.get(User.class, id);
+            session.delete(u);
+            
+            return true;
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        }
+        
+        return false;
+    }
+
+    @Override
+    public User getUserById(int id) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        User u;
+        u = session.get(User.class, id);
+        return u;
+    }
+
    
     
 }

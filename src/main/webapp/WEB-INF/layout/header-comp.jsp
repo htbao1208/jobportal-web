@@ -18,13 +18,13 @@
                     <a class="nav-link active" href="<c:url value="/company"/>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/comp/cvlist"/>">Find Seeker</a>
+                    <a class="nav-link" href="<c:url value="/company/cvlist"/>">Find Seeker</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/company/post"/>">XXX</a>
+                    <a class="nav-link" href="<c:url value="/company/post"/>">Post</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="javascript:;" onclick="updating()">Contact</a>
                 </li>                
                 <c:if test="${pageContext.request.userPrincipal.name == null}">
                     <li class="nav-item dropdown">
@@ -33,8 +33,8 @@
                             <span>Đăng ký</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-center">                                                      
-                            <a class="dropdown-item" href="<c:url value="/comp-register"/>">Đăng ký</a>
-                            <a class="dropdown-item"  href="<c:url value="/login"/>">Đăng nhập</a>                         
+                            <a class="dropdown-item" href="<c:url value="/comp-register"/>">Sign up</a>
+                            <a class="dropdown-item"  href="<c:url value="/login"/>">Sign in</a>                         
                         </div>
                     </li>
                 </c:if>
@@ -49,8 +49,9 @@
                             </c:if>
                             <span>${currentUser.username}</span>                            
                         </a>
-                        <div class="dropdown-menu dropdown-menu-center">                                                      
-                            <a class="dropdown-item" href="<c:url value="/logout"/>">Đăng xuất</a>                                                   
+                        <div class="dropdown-menu dropdown-menu-center">
+                            <a class="dropdown-item" href="<c:url value="/company/mainComp"/>">Infor</a>  
+                            <a class="dropdown-item" href="<c:url value="/logout"/>">Log out</a>                                                   
                         </div>
                     </li>
                 </c:if>

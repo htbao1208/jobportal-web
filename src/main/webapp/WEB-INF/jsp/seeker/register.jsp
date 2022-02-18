@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px; margin-top: 20px; margin-bottom: 20px;">
                         <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Đăng ký ứng viên</h2>
+                            <h2 class="text-uppercase text-center mb-5">Seeker Register</h2>
 
                             <form:form class="register-form" method="post" action="${action}"  modelAttribute="user"  enctype="multipart/form-data">
 
