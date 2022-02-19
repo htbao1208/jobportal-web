@@ -26,5 +26,10 @@ public class StatsServiceImpl implements StatsService{
     public List<Object[]> careerStats(Date fromDate, Date toDate) {
         return this.statsRepository.careerStats(fromDate, toDate);
     }
+
+    @Override
+    public List<Object[]> careerStatsList(Date date, Date date1) {
+        return this.statsRepository.careerStatsList(date, date1);
+    }
     
 }

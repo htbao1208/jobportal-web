@@ -14,4 +14,5 @@ import java.util.List;
  */
 public interface StatsRepository {
     List<Object[]> careerStats(Date fromDate, Date toDate);
+    List<Object[]> careerStatsList(Date fromDate, Date toDate);
 }

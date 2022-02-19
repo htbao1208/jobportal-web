@@ -36,7 +36,7 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${careerStat}" var="c">
+        <c:forEach items="${careerStats}" var="c">
             <tr>
                 <td>${c[0]}</td>
                 <td>${c[1]} ${c[2]}</td>

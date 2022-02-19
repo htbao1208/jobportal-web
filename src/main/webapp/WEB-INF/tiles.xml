@@ -109,8 +109,8 @@ and open the template in the editor.
     </definition>
     <definition name="index-comp" extends="compLayout">
         <put-attribute name="title" value="Trang chu" />   
-        <put-attribute name="css" value="/jobportal/css/test.css"/>     
-        <put-attribute name="content" value="/WEB-INF/jsp/comp/profile1.jsp" />       
+        <put-attribute name="css" value="/jobportal/css/home.css"/>     
+        <put-attribute name="content" value="/WEB-INF/jsp/index-comp.jsp" />       
     </definition>
     <definition name="testPost" extends="compLayout">
         <put-attribute name="title" value="Trang chu" />   

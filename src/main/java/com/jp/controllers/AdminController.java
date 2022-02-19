@@ -40,16 +40,17 @@ public class AdminController {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         Date fromDate = null;
         String fd = params.getOrDefault("fromDate", null);
-        if(fd != null){
+        if(fd != null && !fd.isEmpty()){
             fromDate = f.parse(fd);
         }
         Date toDate = null;
         String td = params.getOrDefault("toDate", null);
-        if(td != null){
+        if(td != null && !td.isEmpty()){
             toDate = f.parse(td);
         }
-        
+        System.out.println(this.statsService.careerStats(null, null));
         model.addAttribute("careerStat", this.statsService.careerStats(fromDate, toDate));
+        model.addAttribute("careerStats", this.statsService.careerStatsList(fromDate, toDate));
         return "careerStats";
     }
 }

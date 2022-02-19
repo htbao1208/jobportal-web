@@ -60,7 +60,37 @@ public class StatsRepositoryImpl implements StatsRepository{
         }
         
         query.where(predicates.toArray(new Predicate[]{}));
-        query.groupBy(rootC.get("name"), rootS.get("firstName"), rootS.get("lastName"), rootA.get("appliedDate"), rootS.get("id"));
+        query.groupBy(rootC.get("name"));
+        
+        Query q = session.createQuery(query);
+        return q.getResultList();
+    }
+
+    @Override
+    public List<Object[]> careerStatsList(Date fromDate, Date toDate) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Object[]> query = builder.createQuery(Object[].class);
+        Root rootA = query.from(Application.class);
+        Root rootJ = query.from(Job.class);
+        Root rootC = query.from(Career.class);
+        Root rootS = query.from(Seeker.class);
+        
+        List<Predicate> predicates = new ArrayList<>();
+        predicates.add(builder.equal(rootC.get("id"), rootJ.get("career")));
+        predicates.add(builder.equal(rootJ.get("id"), rootA.get("job")));
+        predicates.add(builder.equal(rootA.get("seeker"), rootS.get("id")));
+        
+        query.multiselect(rootS.get("id"), rootS.get("firstName"), rootS.get("lastName"), rootC.get("name"), rootA.get("appliedDate"));
+        
+        if(fromDate != null){
+            predicates.add(builder.greaterThanOrEqualTo(rootA.get("appliedDate"), fromDate));
+        }
+        if(toDate != null){
+            predicates.add(builder.lessThanOrEqualTo(rootA.get("appliedDate"), toDate));
+        }
+        
+        query.where(predicates.toArray(new Predicate[]{}));
         
         Query q = session.createQuery(query);
         return q.getResultList();

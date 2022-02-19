@@ -28,7 +28,7 @@
             </form:select>       
         </div>
         <div class="d-flex justify-content-center">
-            <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Cập nhật"/>
+            <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Update"/>
         </div>
     </form:form>
 </div>

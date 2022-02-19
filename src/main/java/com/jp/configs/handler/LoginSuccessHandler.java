@@ -32,7 +32,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler{
         } else if(u.getUserRole().equals(User.COMPANY)) {
             response.sendRedirect("/jobportal/companyview");
         } else if(u.getUserRole().equals(User.ADMIN)){
-            response.sendRedirect("/jobportal/admin/main");
+            response.sendRedirect("/jobportal/admin/careerStats");
         }
     }
     
