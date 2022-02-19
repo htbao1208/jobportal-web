@@ -17,7 +17,7 @@
 
                                 <div class="form-outline mb-4">
                                     <form:input type="text" id="username" path="username" class="form-control form-control-lg" />
-                                    <label class="form-label" for="username">Tên đăng nhập</label>
+                                    <label class="form-label" for="username">Username</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -27,19 +27,19 @@
 
                                 <div class="form-outline mb-4">
                                     <form:input type="password" id="password" path="password" class="form-control form-control-lg" />
-                                    <label class="form-label" for="password">Mật khẩu</label>
+                                    <label class="form-label" for="password">Password</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <form:input type="password" id="confirmPassword" path="confirmPassword" class="form-control form-control-lg" />
-                                    <label class="form-label" for="confirmPassword">Nhập lại mật khẩu</label>
+                                    <label class="form-label" for="confirmPassword">Confirm Password</label>
                                 </div>
                                     
                                 <div class="d-flex justify-content-center">
-                                    <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Đăng ký"/>
+                                    <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Sign Up"/>
                                 </div>
 
-                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="<c:url value="/seeker-login"/>" class="fw-bold text-body"><u>Login here</u></a></p>
+                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="<c:url value="/seeker-login"/>" class="fw-bold text-body"><u>Sign in here</u></a></p>
 
                             </form:form>
 

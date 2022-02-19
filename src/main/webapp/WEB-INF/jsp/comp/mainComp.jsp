@@ -23,12 +23,22 @@
                       <a class="list-group-item list-group-item-action" href="javascript:;" onclick="updating()">
                       Password
                     </a>
+                    <c:if test="${company != null}">
                     <a class="list-group-item list-group-item-action" href="<c:url value="/company/listRecruit"/>">
                       List Recruit
                     </a>
                     <a class="list-group-item list-group-item-action" href="<c:url value="/company/listJob"/>">
                       List Job
                     </a> 
+                    </c:if>
+                      <c:if test="${company == null}">
+                          <a class="list-group-item list-group-item-action" href="javascript:;" onclick="showAlertComp()">
+                      List Recruit
+                    </a>
+                    <a class="list-group-item list-group-item-action" href="javascript:;" onclick="showAlertComp()">
+                      List Job
+                    </a> 
+                    </c:if>
                 </div>
             </div>
         </div>

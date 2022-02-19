@@ -30,11 +30,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle font-weight-bolder mx-1" data-toggle="dropdown">
                             <img class="mr-1 rounded-circle" src="<c:url value="/images/Natasha.png"/>"  width="25" height="25" alt="avatar">
-                            <span>Đăng ký</span>
+                            <span>Sign Up</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-center">                                                      
-                            <a class="dropdown-item" href="<c:url value="/seeker-register"/>">Đăng ký</a>
-                            <a class="dropdown-item"  href="<c:url value="/login"/>">Đăng nhập</a>                         
+                            <a class="dropdown-item" href="<c:url value="/seeker-register"/>">Sign Up</a>
+                            <a class="dropdown-item"  href="<c:url value="/login"/>">Sign In</a>                         
                         </div>
                     </li>
                 </c:if>
@@ -51,7 +51,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-center">                                                      
                             <a class="dropdown-item" href="<c:url value="/seeker/main"/>">Profile</a>
-                            <a class="dropdown-item" href="<c:url value="/logout"/>">Đăng xuất</a>
+                            <a class="dropdown-item" href="<c:url value="/logout"/>">Log out</a>
                         </div>
                     </li>
                 </c:if>

@@ -94,7 +94,7 @@
                                                     <i class="zmdi zmdi-long-arrow-left"></i>
                                                 </a>
                                             </li>-->
-                <c:forEach begin="1" end="${Math.ceil(jCounter/9)}" var="page">
+                <c:forEach begin="1" end="${Math.ceil(jCounter/20)}" var="page">
                     <li class="page-item">
                         <a class="page-link" href="<c:url value="/joblist"/>?page=${page}" tabindex="-1">${page}</a>
                     </li>

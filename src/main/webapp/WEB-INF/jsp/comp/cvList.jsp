@@ -23,11 +23,11 @@
         <div class="col-lg-10 mx-auto">
             <div class="career-search mb-60">
 
-                <form action="#" class="career-form mb-60">
+                <form action="" class="career-form mb-60">
                     <div class="row">
                         <div class="col-md-6 col-lg-3 my-3">
                             <div class="input-group position-relative">
-                                <input type="text" class="form-control" placeholder="Enter Your Keywords" id="keywords">
+                                <input type="text" class="form-control" placeholder="Enter Your Keywords" id="keywords" name="kw">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 my-3">
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 my-3">
-                            <button type="button" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
+                            <button type="submit" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
                                 Search
                             </button>
                         </div>
@@ -106,7 +106,7 @@
                                                         <i class="zmdi zmdi-long-arrow-left"></i>
                                                     </a>
                                                 </li>-->
-                    <c:forEach begin="1" end="${Math.ceil(counter/9)}" var="page">
+                    <c:forEach begin="1" end="${Math.ceil(counter/20)}" var="page">
                         <li class="page-item">
                             <a class="page-link" href="<c:url value="/joblist"/>?page=${page}" tabindex="-1">${page}</a>
                         </li>

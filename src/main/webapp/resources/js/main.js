@@ -7,8 +7,11 @@
 /* global fetch */
 
 function showAlertComp() {
-  alert("You need update your company info to recruit!");
+  alert("You need update your company info to use this feature!");
 }
 function updating() {
   alert("Updating!");
+}
+function showAlertSeeker() {
+  alert("You need to update your information to use this feature!");
 }

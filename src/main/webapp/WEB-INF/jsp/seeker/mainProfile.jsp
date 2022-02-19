@@ -23,12 +23,22 @@
                     <a class="list-group-item list-group-item-action" href="#password">
                       Password
                     </a>
-                    <a class="list-group-item list-group-item-action" href="<c:url value="/seeker/listApplication"/>">
+                    <c:if test="${seeker == null}">
+                        <a class="list-group-item list-group-item-action" href="javascript:;" onclick="showAlertSeeker()">
                       List Application
+                    </a>                    
+                    <a class="list-group-item list-group-item-action" href="javascript:;" onclick="showAlertSeeker()">
+                      CV
                     </a>
+                    </c:if>
+                      <c:if test="${seeker != null}">
+                        <a class="list-group-item list-group-item-action" href="<c:url value="/seeker/listApplication"/>">
+                      List Application
+                    </a>                    
                     <a class="list-group-item list-group-item-action" href="<c:url value="/seeker/CV"/>">
                       CV
-                    </a> 
+                    </a>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -54,11 +64,7 @@
                                         <div class="form-group">
                                             <label for="name">Full name: </label>                                            
                                             <label for="name" class="float-right">${seeker.firstName} ${seeker.lastName}</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dob">DOB: </label>                                            
-                                            <label for="dob" class="float-right">${seeker.dob}</label>
-                                        </div>                                        
+                                        </div>                                      
                                         <div class="form-group">
                                             <label for="phone">Phone: </label>                                            
                                             <label for="phone" class="float-right">${seeker.phone}</label>
@@ -72,10 +78,6 @@
                                         <div class="form-group">
                                             <label for="name">Full name: </label>                                            
                                             <label for="name" class="float-right" style="color: #888888;">Not update</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dob">DOB: </label>                                            
-                                            <label for="dob" class="float-right" style="color: #888888;">Not update</label>
                                         </div>
                                         <div class="form-group">
                                             <label for="phone">Phone: </label>                                            

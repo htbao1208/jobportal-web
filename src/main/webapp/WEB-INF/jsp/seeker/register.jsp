@@ -11,13 +11,13 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px; margin-top: 20px; margin-bottom: 20px;">
                         <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Seeker Register</h2>
+                            <h2 class="text-uppercase text-center mb-5">Seeker Sign Up</h2>
 
                             <form:form class="register-form" method="post" action="${action}"  modelAttribute="user"  enctype="multipart/form-data">
 
                                 <div class="form-outline mb-4">
                                     <form:input type="text" id="username" path="username" class="form-control form-control-lg" />
-                                    <label class="form-label" for="username">Tên đăng nhập</label>
+                                    <label class="form-label" for="username">Username</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -27,24 +27,24 @@
 
                                 <div class="form-outline mb-4">
                                     <form:input type="password" id="password" path="password" class="form-control form-control-lg" />
-                                    <label class="form-label" for="password">Mật khẩu</label>
+                                    <label class="form-label" for="password">Password</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <form:input type="password" id="confirmPassword" path="confirmPassword" class="form-control form-control-lg" />
-                                    <label class="form-label" for="confirmPassword">Nhập lại mật khẩu</label>
+                                    <label class="form-label" for="confirmPassword">Confirm Password</label>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <form:input type="file" id="file" path="file" class="form-control form-control-lg" />
-                                    <label class="form-label" for="file">Ảnh đại diện</label>
+                                    <label class="form-label" for="file">User Image</label>
                                 </div>
 
 
                                 <div class="d-flex justify-content-center">
-                                    <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Đăng ký"/>
+                                    <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Sign Up"/>
                                 </div>
 
-                                <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản? <a href="<c:url value="/seeker-login"/>" class="fw-bold text-body"><u>Đăng nhập.</u></a></p>
+                                <p class="text-center text-muted mt-5 mb-0">Do you already have an account? <a href="<c:url value="/seeker-login"/>" class="fw-bold text-body"><u>Sign In.</u></a></p>
 
                             </form:form>
 

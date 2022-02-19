@@ -11,33 +11,33 @@
 <div class="container">
     <form:form method="post" action="${action}" modelAttribute="seeker">  
         <div class="form-group">
-            <label class="form-label" for="firstName">Tên</label>
+            <label class="form-label" for="firstName">First name</label>
             <form:input type="text" id="firstName" path="firstName" class="form-control form-control-lg" />
         </div>
 
         <div class="form-group">
-            <label class="form-label" for="lastName">Họ</label>
+            <label class="form-label" for="lastName">Last name</label>
             <form:input type="text" id="lastName" path="lastName" class="form-control form-control-lg" />
         </div>
 
         <div class="form-group">
-            <label class="form-label" for="phone">Số điện thoại</label>
+            <label class="form-label" for="phone">Phone</label>
             <form:input type="text" id="phone" path="phone" class="form-control form-control-lg" />
         </div>
 
         <div class="form-group">
-            <label class="form-label" for="address">Địa chỉ</label>
+            <label class="form-label" for="address">Address</label>
             <form:input type="text" id="address" path="address" class="form-control form-control-lg" />
         </div>
-        <div class="form-group">
-            <label class="form-label" for="dob">Ngày sinh</label>
-            <form:input type="date" id="dob" path="dob" class="form-control form-control-lg" />
-        </div>
+<!--        <div class="form-group">
+            <label class="form-label" for="dob">DOB</label>
+            <%--<form:input type="date" id="dob" path="dob" class="form-control form-control-lg" />--%>
+        </div>-->
         <form:hidden path="id" />
 
 
         <div class="d-flex justify-content-center">
-            <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Cập nhật"/>
+            <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Update"/>
         </div>
 
 

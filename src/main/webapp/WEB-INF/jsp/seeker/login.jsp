@@ -9,11 +9,11 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px; margin-top: 20px; margin-bottom: 20px;">
                         <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Đăng nhập</h2>
+                            <h2 class="text-uppercase text-center mb-5">Sign In</h2>
                             <form method="POST" action="${action}">                
                                 <div class="form-outline mb-4">
                                     <input type="text" id="username" name="username" class="form-control form-control-lg" />
-                                    <label class="form-label" for="username">Tên đăng nhập</label>
+                                    <label class="form-label" for="username">Username</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -21,9 +21,9 @@
                                     <label class="form-label" for="password">Password</label>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign In</button>
                                 </div>
-                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="<c:url value="/seeker-register"/>" class="fw-bold text-body"><u>Register here</u></a></p>
+                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="<c:url value="/seeker-register"/>" class="fw-bold text-body"><u>Sign up here</u></a></p>
                             </form>
                         </div>
                     </div>
