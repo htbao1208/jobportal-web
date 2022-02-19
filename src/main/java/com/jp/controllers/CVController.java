@@ -123,7 +123,7 @@ public class CVController {
         recruit.setCv(cv);
         if(this.recruitService.addRecruit(recruit) == true){
             System.out.print("Complete");
-            return "redirect:/";
+            return "redirect:/company/listRecruit";
         }
         else
             return"cvDetail";
